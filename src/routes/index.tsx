@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Main from "../components/pages/Main";
-// import Accounts from "../components/pages/Accounts";
 import Campaigns from "../components/pages/Campaigns";
 import Profiles from "../components/pages/Profiles";
 
