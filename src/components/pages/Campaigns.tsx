@@ -22,6 +22,7 @@ const Campaigns: FC = () => {
 	const { pathname, state } = useLocation();
 	const parts = pathname.split("/");
 	const id = parts[parts.length - 1];
+	
 
 	useEffect(() => {
 		const filteredCampaigns = CampaignsList.filter((item) => {
@@ -125,15 +126,15 @@ const Campaigns: FC = () => {
 			</div>
 
 			<ul className="w-[600px] mx-auto">
-				{visibleUsers.map((item) => (
+				{visibleUsers.map(({ campaignId, clicks, cost, date }) => (
 					<li
-						key={item.campaignId}
+						key={campaignId}
 						className="hover:bg-gray-200 transition duration-300 border rounded overflow-hidden divide-y divide-gray-200 mb-2"
 					>
 						<div className="flex items-center justify-between p-4">
-							<p className="text-gray-600 w-[90px]">{item.clicks}</p>
-							<p className="text-gray-600 w-[90px]">{item.cost} $</p>
-							<p className="text-gray-600 w-[90px]">{item.date}</p>
+							<p className="text-gray-600 w-[90px]">{clicks}</p>
+							<p className="text-gray-600 w-[90px]">{cost} $</p>
+							<p className="text-gray-600 w-[90px]">{date}</p>
 						</div>
 					</li>
 				))}

@@ -6,7 +6,7 @@ import Profiles from "../components/pages/Profiles";
 
 const AppRoutes: React.FC = () => {
 	return (
-		<Router>
+		<Router basename="/test-AA-table">
 			<Routes>
 				<Route path="/" element={<Main />} />
 				<Route path="/account/:id" element={<Profiles />} />

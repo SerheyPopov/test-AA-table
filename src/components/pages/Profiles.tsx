@@ -27,7 +27,6 @@ const Profiles: FC = () => {
 		} else {
 			setSearchTermMrtpls(event.target.value);
 		}
-
 	};
 
 	const filteredUsers = profile.filter(
@@ -114,19 +113,19 @@ const Profiles: FC = () => {
 				/>
 			</div>
 			<ul className=" w-[600px] mx-auto">
-				{visibleUsers?.map((item) => (
+				{visibleUsers?.map(({ profileId, country, marketplace }) => (
 					<li
-						key={item.profileId}
+						key={profileId}
 						className="hover:bg-gray-200 transition duration-300 border rounded overflow-hidden divide-y divide-gray-200 mb-2"
 					>
 						<NavLink
-							to={`${location.pathname}/profiles/${item.profileId}`}
-							state={{ pth: pathname, eml: state, cntr: item.country, mrkpls: item.marketplace }}
+							to={`${pathname}/profiles/${profileId}`}
+							state={{ pth: pathname, eml: state, cntr: country, mrkpls: marketplace }}
 							className="block p-4"
 						>
 							<div className="flex items-center justify-between">
-								<p className="text-blue-600 font-semibold">{item.country}</p>
-								<p className="text-gray-600">{item.marketplace}</p>
+								<p className="text-blue-600 font-semibold">{country}</p>
+								<p className="text-gray-600">{marketplace}</p>
 							</div>
 						</NavLink>
 					</li>

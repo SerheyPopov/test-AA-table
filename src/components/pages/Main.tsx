@@ -99,17 +99,17 @@ const Main: FC = () => {
 				</div>
 			</div>
 			<ul className=" w-[600px] mx-auto">
-				{visibleUsers?.map((item) => (
+				{visibleUsers?.map(({ accountId, email, authToken, creationDate }) => (
 					<li
-						key={item.accountId}
+						key={accountId}
 						className="hover:bg-gray-200 transition duration-300 border rounded overflow-hidden divide-y divide-gray-200 mb-2"
 					>
-						<NavLink to={`/account/${item.accountId}`} state={item.email} className="block p-4">
+						<NavLink to={`/account/${accountId}`} state={email} className="block p-4">
 							<div className="flex items-center justify-between">
-								<p className="text-blue-600 font-semibold">{item.email}</p>
+								<p className="text-blue-600 font-semibold">{email}</p>
 								<div className="flex gap-4 items-center w-[200px] justify-between">
-									<p className="text-gray-600">{item.authToken}</p>
-									<p className="text-gray-600"> {item.creationDate}</p>
+									<p className="text-gray-600">{authToken}</p>
+									<p className="text-gray-600"> {creationDate}</p>
 								</div>
 							</div>
 						</NavLink>
